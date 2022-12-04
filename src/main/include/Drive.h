@@ -1,6 +1,7 @@
 #pragma once
 
 #include <Mechanism.h>
+#include <frc/motorcontrol/Spark.h>
 
 class Drive : public Mechanism {
 public:
@@ -15,4 +16,7 @@ public:
 
 private:
     // Variables here!
+
+    frc::Spark spark {0};
+
 };
