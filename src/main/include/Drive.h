@@ -17,6 +17,9 @@ public:
 private:
     // Variables here!
 
-    frc::Spark spark {0};
+    //left
+    frc::Spark leftSpark {0};
 
+    //right
+    frc::Spark rightSpark {1};
 };
