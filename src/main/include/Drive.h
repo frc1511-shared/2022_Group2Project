@@ -17,9 +17,12 @@ public:
 private:
     // Variables here!
 
+    //% of drive things
+    double left;
+    double right;
+    
     //left
     frc::Spark leftSpark {0};
-
     //right
     frc::Spark rightSpark {1};
 };
