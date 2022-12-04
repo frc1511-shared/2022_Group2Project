@@ -12,15 +12,29 @@ Controls::~Controls() {
 
 
 void Controls::process() {
-double axis = controller.GetRawAxis(0);
+double axisL = controller.GetRawAxis(1);
+double axisR = controller.GetRawAxis(5);
 
- if (axis > 0.5) {
-    drive->tankDrive(1, 0.5);
-  } else if (axis < -0.5) {
-    drive->tankDrive(0.5, 1);
+double l = 0;
+double r = 0;
+
+ if (axisL > 0.5) {
+    l = 1;
+  } else if (axisL < -0.5) {
+    l = 0;
   } else {
-    drive->tankDrive(0.5, 0.5);
+    l = 0.5;
   }
+
+  if (axisR > 0.5) {
+    r = 1;
+  } else if (axisR < -0.5) {
+    r = 0;
+  } else {
+    r = 0.5;
+  }
+
+  drive->tankDrive(r, l);
 }
 
 void Controls::resetToMode(MatchMode mode) {
