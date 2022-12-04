@@ -3,6 +3,7 @@
 Controls::Controls(Drive* drive)
 : drive(drive) {
 
+
 }
 
 Controls::~Controls() {
