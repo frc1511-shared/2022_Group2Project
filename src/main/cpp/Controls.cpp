@@ -17,7 +17,7 @@ double axisR = controller.GetRawAxis(5);
 
 double l = 0;
 double r = 0;
-
+//woooow thats crazy its like a tank
  if (axisL > 0.5) {
     l = 1;
   } else if (axisL < -0.5) {
