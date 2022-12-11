@@ -35,7 +35,9 @@ void Cargo::process() {
     
 
    */
-  
+
+    cargoTalon.Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, 0.1);
+
 }
 
 void Cargo::resetToMode(MatchMode mode) {
