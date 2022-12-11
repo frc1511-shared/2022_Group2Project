@@ -20,6 +20,21 @@ void Cargo::process() {
     arms let go when the robot moved to good spot to put it in the thing
 
     */
+
+
+
+   /*
+    cargo things
+
+    talons for motors
+
+    move each one in to get balls
+    do something with them idk
+
+
+    
+
+   */
 }
 
 void Cargo::resetToMode(MatchMode mode) {
