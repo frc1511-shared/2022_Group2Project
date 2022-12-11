@@ -26,7 +26,7 @@ void Drive::sendFeedback() {
 
 void Drive::tankDrive(double left1, double right1) {
     // Tank drive stuff here!
-
+    left++;
     left = left1;
     right = right1;
 }
