@@ -15,6 +15,7 @@ public:
 
 private:
     Drive* drive;
+
     frc::GenericHID controller {0};
     // Variables here!   //wow 
 };

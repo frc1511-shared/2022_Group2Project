@@ -28,6 +28,6 @@ void Drive::tankDrive(double left1, double right1) {
     // Tank drive stuff here!
     // Charlie broke tank drive at this line!!!
     // Tyler removed that line :(
-    left = left1;
-    right = right1;
+    left = left1 * 0.5;
+    right = right1 * 0.5;
 }

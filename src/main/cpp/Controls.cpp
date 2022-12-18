@@ -3,7 +3,6 @@
 Controls::Controls(Drive* drive)
 : drive(drive) {
 
-
 }
 
 Controls::~Controls() {
@@ -12,16 +11,19 @@ Controls::~Controls() {
 
 
 void Controls::process() {
-double axisL = controller.GetRawAxis(1);
-double axisR = controller.GetRawAxis(5);
+    double axisL = -controller.GetRawAxis(1);
+    double axisR = -controller.GetRawAxis(5);
 
-drive->tankDrive(axisR, axisL);
+    drive->tankDrive(axisR, axisL);
+
+    bool intake = controller.GetRawButton(1);
+    
+
 }
 
 void Controls::resetToMode(MatchMode mode) {
 
 }
-
 void Controls::sendFeedback() {
 
 }

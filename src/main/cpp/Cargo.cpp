@@ -38,12 +38,22 @@ void Cargo::process() {
 
    */
 
-    cargoTalon.Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, 0.1);
+    //cargoTalon.Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, 0.1);
 
+    //if its intaking, set the intake motors to move
+    if (intake) {
+        leftCargoTalon.Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, 0.1);
+        rightCargoTalon.Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, 0.1);
+    } else {
+        leftCargoTalon.Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, 0.0);
+        rightCargoTalon.Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, 0.0);
+    }
 }
 
 void Cargo::resetToMode(MatchMode mode) {
-
+    intake = false;
+    leftCargoTalon.Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, 0.0);
+    rightCargoTalon.Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, 0.0);
 }
 
 void Cargo::sendFeedback() {
@@ -52,6 +62,10 @@ void Cargo::sendFeedback() {
 
 void Cargo::setCargoDir(CargoDir dir) {
     cargoDir = dir;
+}
+
+void Cargo::setIntake(bool intake) {
+    this->intake = intake;
 }
 
 Cargo::CargoDir Cargo::getCargoDir() {
