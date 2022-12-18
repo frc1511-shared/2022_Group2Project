@@ -11,6 +11,8 @@ Cargo::~Cargo() {
 void Cargo::process() {
     /*
 
+    This should be in the hatch pannel class
+
     arm motor
     elevator motor
 
