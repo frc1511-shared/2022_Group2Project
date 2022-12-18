@@ -17,7 +17,9 @@ void Controls::process() {
     drive->tankDrive(axisR, axisL);
 
     bool intake = controller.GetRawButton(1);
-    
+    if (intake) {
+        
+    }
 
 }
 

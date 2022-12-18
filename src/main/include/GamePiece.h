@@ -14,8 +14,18 @@ public:
     void resetToMode(MatchMode mode) override;
     void sendFeedback() override;
 
+    void setCargoDir(Cargo::CargoDir dir);
+
 private:
     Cargo* cargo;
     HatchPanel* hatchPanel;
 
+    enum class GamePieceType {
+        CARGO,
+        HATCH_PANEL,
+        NOTHING
+    };
+
+    GamePieceType type;
+    Cargo::CargoDir intake = Cargo::CargoDir::INTAKE;
 };
